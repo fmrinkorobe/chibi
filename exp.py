@@ -21,11 +21,11 @@ class Add(object):
     def eval(self):
         return self.left.eval() + self.right.eval()
 
-e = Add(1, 2)
+e = Add(Val(1), Val(2))
 print(e.eval())
 assert e.eval() == 3
 
-e = Add(Val(1), Add(2,3))
-print(e.eval())
+e = Add(Val(1), Add(Val(2), Val(3)))
+assert e.eval() == 6
 
-print()
+print(e.eval())
